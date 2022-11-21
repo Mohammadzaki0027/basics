@@ -23,7 +23,8 @@
         <option value="Backend">Backend</option>
         <option value="Frontend">Frontend</option>
       </select>
-      <input id="salary"
+      <input
+        id="salary"
         type="number"
         placeholder="Enter expected salary in lakhs per annum "
       />
@@ -31,46 +32,20 @@
     </form>
   </body>
   <script>
-      document.querySelector("#form").addEventListener("submit",myfun)
+    document.querySelector("#form").addEventListener("submit", myfun);
 
-      var jobarr=JSON.parse(localStorage.getItem("jobdata"))||[]
-function myfun()
-{
-    event.preventDefault()
-var obj={
-    name:document.querySelector("#name").value,
-    email:document.querySelector("#email").value,
-    role:document.querySelector("#role").value,
-    salary:document.querySelector("#salary").value,
+    let jobarr = JSON.parse(localStorage.getItem("jobdata")) || [];
+    function myfun() {
+      event.preventDefault();
+      var obj = {
+        name: document.querySelector("#name").value,
+        email: document.querySelector("#email").value,
+        role: document.querySelector("#role").value,
+        salary: document.querySelector("#salary").value,
+      };
+      jobarr.push(obj);
+      localStorage.setItem("jobdata", JSON.stringify(jobarr));
 
-}
-jobarr.push(obj)
-localStorage.setItem("jobdata",JSON.stringify(jobarr))
-console.log(jobarr)
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
+    }
+  </script>
+</html>
