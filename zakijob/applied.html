@@ -101,18 +101,6 @@ function handleSalarySort(){
       }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
  function displayData(appdata){
      document.querySelector("tbody").innerHTML=""
     appdata.map(function(ele){
@@ -133,15 +121,13 @@ document.querySelector("tbody").append(tr)
 td5.addEventListener("click",function(){
     bookmarkme(ele)
 })
-
 })
-
 }
 
 
 
 function bookmarkme(ele){
-console.log(ele)
+
 bookdata.push(ele)
 localStorage.setItem("bookmarkdata",JSON.stringify(bookdata))
 
